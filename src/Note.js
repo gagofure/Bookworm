@@ -23,9 +23,14 @@ class Note extends Component {
         })
     }
 //sets the state of save
-    save( ) {
-        alert ( this._newText.value );
-    }
+    save(e ) {
+       e.preventDefault();
+       this.props.onChange(this._newText.value, this.props.index)
+       this.setState({
+           editing: false 
+       })
+    }// e prevent the default behaviour of the form
+
 //sets the state of remove
     remove( ) {
         alert( 'removing note' );
@@ -35,9 +40,9 @@ class Note extends Component {
     renderForm () {
              return (
                 <div className="note"> 
-                    <form>
+                    <form onSubmit = {this.save} >
                         <textarea ref = {input => this._newText = input } />
-                        <button onClick = {this.save} id ="save" ><FaFileAlt/> </button>
+                        <button id='save' ><FaFileAlt/> </button>
                     </form>
                 </div>
          )
