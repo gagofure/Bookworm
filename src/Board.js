@@ -22,18 +22,26 @@ class Board extends Component {
 		}
 		this.eachNote = this.eachNote.bind(this);
 		this.update = this.update.bind(this);
+		this.remove = this.remove.bind(this);
 	}
 
-	// The state of the note is held in Board component.
+	//  Update/edit the existing note || The state of the note is held in Board component.
 	// Update fuction will help us send the newText from it's child, Note component.
 	update(newText, i) {
 		console.log('Updating item at index', i, newText);
-		this.setState(preState => ({
-			notes: preState.notes.map(
+		this.setState(prevState => ({
+			notes: prevState.notes.map(
 				note => (note.id !== i) ? note : { ...note, note: newText }
 			) // reset note to what ever the previous state of notes.map is if the conditiion is met
 		}))  //reset to the previous state of the note
+	}
 
+	//Remove note from the board
+	remove(id){
+		console.log('removing item at', id);
+		this.setState(prevState =>({
+			notes: prevState.notes.filter(note => note.id !== id)
+		}))
 	}
 
 
@@ -43,7 +51,8 @@ class Board extends Component {
 		return (
 			<Note key={i}
 				index={i}
-				onChange={this.update}>
+				onChange={this.update}
+				onRemove={this.remove}>
 				{note.note}
 			</Note>
 		)// onChange get the newText from the note by calling the update Functon 

@@ -33,7 +33,7 @@ class Note extends Component {
 
 //sets the state of remove
     remove( ) {
-        alert( 'removing note' );
+        this.props.onRemove(this.props.index);
     }
 
 // render the form that takes text input from users
