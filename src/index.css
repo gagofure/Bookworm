@@ -33,13 +33,13 @@ div.note {
     width: 150px;
     background-color: yellow;
     margin: 2px 0;
-    position: relative;
+    position: absolute;
     cursor: -webkit-grab;
     -webkit-box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .2);
     box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .2);
-}  g
+}
 
-div.note:active {
+g div.note:active {
     cursor: -webkit-grabbing;
 }
 
@@ -49,11 +49,11 @@ div.note p {
     font-family: "Shadows Into Light", Arial;
 }
 
-div.note:hover > span {
+div.note:hover>span {
     opacity: 1;
 }
 
-div.note > span {
+div.note>span {
     position: absolute;
     bottom: 2px;
     right: 2px;
@@ -65,30 +65,30 @@ div.note button {
     margin: 2px;
 }
 
-div.note > textarea {
+div.note>textarea {
     height: 75%;
     background: rgba(255, 255, 255, .5);
 }
 
 div.board button {
-  color: #fff;
-  font-size: 14px;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 14px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.55);
 }
 
 #add {
-  background-color: #5cb85c;
-  height: 3em;
+    background-color: #5cb85c;
+    height: 3em;
 }
 
 #edit {
-  background-color: #337ab7;
+    background-color: #337ab7;
 }
 
 #save {
-  background-color: #5cb85c;
+    background-color: #5cb85c;
 }
 
 #remove {
-  background-color: #d9534f;
+    background-color: #d9534f;
 }
