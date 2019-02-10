@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 import React, { Component } from 'react';
 import Note from './Note';
 import { FaPlusCircle } from 'react-icons/fa';
@@ -5,10 +7,10 @@ import { FaPlusCircle } from 'react-icons/fa';
 
 class Board extends Component {
 	constructor(props) {       // render note based on some state data
-		super(props)
+		super(props);
 		this.state = {
 			notes: [] // an arry that list numbers of note in our App
-		}
+		};
 		this.add = this.add.bind(this);
 		this.eachNote = this.eachNote.bind(this);
 		this.update = this.update.bind(this);
@@ -17,11 +19,11 @@ class Board extends Component {
 	}
 
 		componentWillMount(){
-			var self = this 
+			var self = this ;
 			if (this.props.count){
 				fetch(`https://baconipsum.com/api/?type=all-meat&sentences=${this.props.count}`)
 						.then( response => response.json())
-						.then(json => json[0].split('. ').forEach(sentence => self.add(sentence.substring(0, 25))))
+						.then(json => json[0].split('. ').forEach(sentence => self.add(sentence.substring(0, 25))));
 			}
 		} 
 
@@ -41,7 +43,7 @@ class Board extends Component {
 		// generates id for a new note added or created
 		nextId(){
 			this.uniqueId = this.uniqueId || 0
-			return this.uniqueId++ 
+			return this.uniqueId++; 
 		}
 
 	//  Update/edit the existing note || The state of the note is held in Board component.
@@ -60,7 +62,7 @@ class Board extends Component {
 		console.log('removing item at', id);
 		this.setState(prevState =>({
 			notes: prevState.notes.filter(note => note.id !== id)
-		}))
+		}));
 	}
 
 
