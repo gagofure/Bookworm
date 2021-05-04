@@ -5,7 +5,7 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^5.3.1",
     "ajv": "^6.5.3",
-    "merge": "^1.2.1",
+    "merge": "^2.1.1",
     "npm-dependencies-merge": "^1.0.5",
     "react": "^16.4.1",
     "react-dom": "^16.13.1",
